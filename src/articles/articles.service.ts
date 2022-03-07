@@ -22,10 +22,13 @@ export class ArticlesService {
 
   async create(articleData: CreateArticleDto) {
     const plainArticleData = instanceToPlain(articleData);
+    console.log('ArticleData', articleData);
+    console.log('PlainArticleData', plainArticleData);
     await this.articleRepository.save(
       plainToInstance(Article, {
-        ...plainArticleData,
+        author_id: undefined,
         author: plainArticleData.author_id,
+        ...plainArticleData,
       }),
     );
   }
