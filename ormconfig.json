@@ -1,0 +1,14 @@
+{
+  "type": "mariadb",
+  "charset": "utf8mb4",
+  "logging": true,
+  "logger": "file",
+  "timezone": "+09:00",
+  "host": "localhost",
+  "port": 3307,
+  "username": "root",
+  "password": "root",
+  "database": "board-example",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "synchronize": true
+}
