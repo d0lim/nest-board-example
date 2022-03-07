@@ -2,7 +2,7 @@
 GET http://localhost:3000/members
 
 ### Get member with specific id
-GET http://localhost:3000/members/0
+GET http://localhost:3000/members/1
 
 ### Add member
 POST http://localhost:3000/members

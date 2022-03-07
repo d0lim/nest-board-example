@@ -12,11 +12,11 @@ export class ArticlesService {
   ) {}
 
   findAll(): Promise<Article[]> {
-    return this.articleRepository.find();
+    return this.articleRepository.find({ relations: ['author'] });
   }
 
   findById(id: number): Promise<Article> {
-    return this.articleRepository.findOne(id);
+    return this.articleRepository.findOne(id, { relations: ['author'] });
   }
 
   async create(articleData: CreateArticleDto) {

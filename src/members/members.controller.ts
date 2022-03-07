@@ -15,13 +15,13 @@ export class MembersController {
   constructor(private readonly memberSerivce: MembersService) {}
 
   @Get()
-  findAll(): Member[] {
-    return [] as Member[];
+  async findAll(): Promise<Member[]> {
+    return await this.memberSerivce.findAll();
   }
 
   @Get(':id')
-  findById(@Param('id', ParseIntPipe) memberId: number): Member {
-    return { id: memberId } as Member;
+  async findById(@Param('id', ParseIntPipe) memberId: number): Promise<Member> {
+    return await this.memberSerivce.findById(memberId);
   }
 
   @Post()

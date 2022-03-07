@@ -21,6 +21,6 @@ export class MembersService {
   }
 
   findById(id: number): Promise<Member> {
-    return this.memberRepository.findOne(id);
+    return this.memberRepository.findOne(id, { relations: ['articles'] });
   }
 }

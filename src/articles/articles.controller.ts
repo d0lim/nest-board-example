@@ -15,13 +15,15 @@ export class ArticlesController {
   constructor(private readonly articleService: ArticlesService) {}
 
   @Get()
-  findAll(): Article[] {
-    return [] as Article[];
+  async findAll(): Promise<Article[]> {
+    return this.articleService.findAll();
   }
 
   @Get(':id')
-  findById(@Param('id', ParseIntPipe) articleId: number): Article {
-    return { id: articleId } as Article;
+  async findById(
+    @Param('id', ParseIntPipe) articleId: number,
+  ): Promise<Article> {
+    return this.articleService.findById(articleId);
   }
 
   @Post()
