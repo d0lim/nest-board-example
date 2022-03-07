@@ -6,6 +6,15 @@ GET http://localhost:3000/articles/0
 
 ### Add article
 POST http://localhost:3000/articles
+Content-Type: application/json
+
+{
+  "title": "Sample title 1",
+  "description": "Sample description 1",
+  "author_id": 1,
+  "raw_content": "<h1>hello world</h1>",
+  "content": "hello world"
+}
 
 ### Update article with specific id
 PUT hptt://localhost:3000/articles/0

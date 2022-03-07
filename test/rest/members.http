@@ -1,11 +1,17 @@
-### Get all articles
+### Get all members
 GET http://localhost:3000/members
 
-### Get article with specific id
+### Get member with specific id
 GET http://localhost:3000/members/0
 
-### Add article
+### Add member
 POST http://localhost:3000/members
+Content-Type: application/json
 
-### Update article with specific id
+{
+  "first_name": "Dongyoung",
+  "last_name": "Lim"
+}
+
+### Update member with specific id
 PUT hptt://localhost:3000/members/0
