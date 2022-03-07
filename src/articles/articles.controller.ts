@@ -4,10 +4,13 @@ import {
   Get,
   Param,
   ParseIntPipe,
+  Patch,
   Post,
+  Put,
 } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
 import { CreateArticleDto } from './dto/create-article.dto';
+import { UpdateArticleDto } from './dto/update-article.dto';
 import { Article } from './entities/article.entity';
 
 @Controller('articles')
@@ -29,5 +32,13 @@ export class ArticlesController {
   @Post()
   create(@Body() articleData: CreateArticleDto) {
     return this.articleService.create(articleData);
+  }
+
+  @Patch(':id')
+  update(
+    @Param('id', ParseIntPipe) articleId: number,
+    @Body() articleData: UpdateArticleDto,
+  ) {
+    return this.articleService.update(articleId, articleData);
   }
 }

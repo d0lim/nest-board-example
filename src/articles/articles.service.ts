@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { instanceToPlain, plainToInstance } from 'class-transformer';
 import { Repository } from 'typeorm';
 import { CreateArticleDto } from './dto/create-article.dto';
+import { UpdateArticleDto } from './dto/update-article.dto';
 import { Article } from './entities/article.entity';
 
 @Injectable()
@@ -26,6 +27,13 @@ export class ArticlesService {
         ...plainArticleData,
         author: plainArticleData.author_id,
       }),
+    );
+  }
+
+  async update(articleId: number, articleData: UpdateArticleDto) {
+    const article = instanceToPlain(articleData);
+    await this.articleRepository.save(
+      plainToInstance(Article, { id: articleId, ...article }),
     );
   }
 }
