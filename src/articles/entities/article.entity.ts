@@ -5,6 +5,7 @@ import {
   DeleteDateColumn,
   Entity,
   JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -20,7 +21,8 @@ export class Article {
   @Column()
   description: string;
 
-  @JoinColumn()
+  @ManyToOne(() => Member, (member) => member.articles)
+  @JoinColumn({ name: 'author_id' })
   author: Member;
 
   @Column()

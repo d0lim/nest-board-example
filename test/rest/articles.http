@@ -1,0 +1,11 @@
+### Get all articles
+GET http://localhost:3000/articles
+
+### Get article with specific id
+GET http://localhost:3000/articles/0
+
+### Add article
+POST http://localhost:3000/articles
+
+### Update article with specific id
+PUT hptt://localhost:3000/articles/0
