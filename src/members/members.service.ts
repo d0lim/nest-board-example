@@ -23,4 +23,8 @@ export class MembersService {
   findById(id: number): Promise<Member> {
     return this.memberRepository.findOne(id, { relations: ['articles'] });
   }
+
+  findByUsername(username: string): Promise<Member> {
+    return this.memberRepository.findOne({ where: { username } });
+  }
 }

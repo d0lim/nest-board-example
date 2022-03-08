@@ -7,10 +7,16 @@ export class Member {
   id: number;
 
   @Column()
+  username: string;
+
+  @Column()
   first_name: string;
 
   @Column()
   last_name: string;
+
+  @Column()
+  password: string;
 
   @OneToMany(() => Article, (article) => article.author)
   articles: Article[];

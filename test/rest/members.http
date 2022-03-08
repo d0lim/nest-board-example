@@ -9,9 +9,20 @@ POST http://localhost:3000/members
 Content-Type: application/json
 
 {
-  "first_name": "Dongyoung",
-  "last_name": "Lim"
+  "first_name": "Some1",
+  "last_name": "Day1",
+  "username" : "sample_username_1",
+  "password": "pass1234"
 }
 
 ### Update member with specific id
 PUT hptt://localhost:3000/members/0
+
+### Just test authentication
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username" :"dongyoung",
+  "password": "lim"
+}
