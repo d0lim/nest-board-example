@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### Update member with specific id
-PUT hptt://localhost:3000/members/0
+PUT http://localhost:3000/members/0
 
 ### Just test authentication
 POST http://localhost:3000/auth/login
@@ -26,3 +26,7 @@ Content-Type: application/json
   "username" :"dongyoung",
   "password": "lim"
 }
+
+### Get profile with JWT
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRvbmd5b3VuZyIsInN1YiI6IkRvbmd5b3VuZyIsImlhdCI6MTY0NjcyMzQyNSwiZXhwIjoxNjQ2NzIzNDg1fQ.qZS2FJQ3F4HlESCPNIdTvtlamzzcvd2b0OJL1GusGlU
