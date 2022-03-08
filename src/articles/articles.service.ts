@@ -20,15 +20,15 @@ export class ArticlesService {
     return this.articleRepository.findOne(id, { relations: ['author'] });
   }
 
-  async create(articleData: CreateArticleDto) {
+  async create(articleData: CreateArticleDto): Promise<Article> {
     const plainArticleData = instanceToPlain(articleData);
-    console.log('ArticleData', articleData);
-    console.log('PlainArticleData', plainArticleData);
-    await this.articleRepository.save(
+    return await this.articleRepository.save(
       plainToInstance(Article, {
-        author_id: undefined,
         author: plainArticleData.author_id,
-        ...plainArticleData,
+        title: plainArticleData.title,
+        description: plainArticleData.description,
+        raw_content: plainArticleData.raw_content,
+        content: plainArticleData.content,
       }),
     );
   }

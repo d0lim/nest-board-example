@@ -40,16 +40,16 @@ describe('ArticlesService', () => {
       'Test Title 1',
       'Test Description 1',
       1,
-      'Hello World',
       '<h1>Hello World</h1>',
+      'Hello World',
     );
 
     const repositoryData = plainToInstance(Article, {
       title: 'Test Title 1',
       description: 'Test Description 1',
       author: 1,
-      raw_content: 'Hello World',
-      content: '<h1>Hello World</h1>',
+      raw_content: '<h1>Hello World</h1>',
+      content: 'Hello World',
     });
 
     it.todo('게시물을 만들 수 있어야 합니다.');
